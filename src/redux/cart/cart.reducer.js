@@ -1,11 +1,11 @@
 import CartActionTypes from "./cart.types";
 import { addItemToCard } from "./card.utils";
-const INITAL_STATE = {
+const INITIAL_STATE = {
   hidden: true,
   cartItems: [],
 };
 
-const cartReducer = (state = INITAL_STATE, action) => {
+const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CartActionTypes.TOGGLE_CART_HIDDEN:
       return {
