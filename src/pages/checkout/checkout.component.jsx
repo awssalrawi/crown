@@ -5,6 +5,7 @@ import { selectCartItems } from "./../../redux/cart/card.selector";
 import { createStructuredSelector } from "reselect";
 import { selectCartTotal } from "./../../redux/cart/card.selector";
 import CheckoutItem from "../../component/checkout-item/checkout-item.component";
+import StripeCheckoutButton from "./../../component/stripe-button/stripe-button.component";
 const CheckoutPage = ({ cartItems, total }) => {
   return (
     <div className="checkout-page">
@@ -31,6 +32,14 @@ const CheckoutPage = ({ cartItems, total }) => {
       <div className="total">
         <span>TOTAL: $ {total} </span>
       </div>
+      <div className="test-warning">
+        *Please use this following test credit cart for payments
+        <br />
+        4242 4242 4242 4242 4242 - EXP:01/23 - CVV:123
+        <br />
+        <br />
+      </div>
+      <StripeCheckoutButton price={total} />
     </div>
   );
 };
